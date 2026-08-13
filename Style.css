@@ -418,27 +418,78 @@ footer {
 .btn {
     transition: all 0.3s ease;
 }
-/* TEST - NEW DESIGN */
-body {
-    background: #f4f8fb !important;
-}
-
-.navbar {
-    background: #071a2b !important;
-}
+/* ===== HERO FINAL FIX ===== */
 
 .hero {
+    min-height: 100vh !important;
+    height: 100vh !important;
+
     background-image:
-        linear-gradient(rgba(5,20,35,0.55), rgba(5,20,35,0.65)),
-        url("hostel-exterior.jpg") !important;
+        linear-gradient(
+            rgba(5, 20, 35, 0.55),
+            rgba(5, 20, 35, 0.70)
+        ),
+        url("./hostel-exterior.jpg") !important;
+
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero .overlay {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.hero .container {
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 .hero h1 {
     color: white !important;
+    font-size: 60px !important;
+    font-weight: 800 !important;
+    margin-bottom: 20px !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
 }
 
+.hero p {
+    color: #f5c542 !important;
+    font-size: 26px !important;
+    margin-bottom: 30px !important;
+}
+
+.hero .btn-warning {
+    background: #f5c542 !important;
+    color: #071a2b !important;
+    border: none !important;
+    padding: 14px 30px !important;
+    border-radius: 50px !important;
+    font-weight: bold !important;
+}
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 38px !important;
+    }
+
+    .hero p {
+        font-size: 20px !important;
+    }
+}
 .hero p {
     color: #f5c542 !important;
 }
