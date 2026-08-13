@@ -22,14 +22,16 @@ body {
 /* ================= NAVBAR ================= */
 
 .navbar {
-    background: rgba(10, 25, 47, 0.96) !important;
+    background: rgba(7, 26, 43, 0.97) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.20);
     padding: 12px 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
     font-size: 22px;
+    font-weight: 700;
     color: #ffffff !important;
 }
 
@@ -53,88 +55,130 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-    min-height: 100vh;
+    position: relative !important;
+
+    width: 100%;
+    min-height: 100vh !important;
+    height: 100vh !important;
 
     background-image:
         linear-gradient(
-            rgba(5, 20, 35, 0.60),
-            rgba(5, 20, 35, 0.72)
+            rgba(5, 20, 35, 0.55),
+            rgba(5, 20, 35, 0.70)
         ),
-        url("hostel-exterior.jpg");
+        url("https://dwivediayush662-lang.github.io/indore-smart-stay-hostel/hostel-exterior.jpg") !important;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
-/* Hero content */
+/* Hero overlay */
 
 .hero .overlay {
-    width: 100%;
-    min-height: 100vh;
+    width: 100% !important;
+    height: 100% !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+}
+
+
+/* Hero container */
+
+.hero .container {
+    position: relative !important;
+    z-index: 2 !important;
+
+    text-align: center;
 }
 
 
 /* Hero heading */
 
 .hero h1 {
-    color: #ffffff;
-    font-size: clamp(40px, 6vw, 75px);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+    color: #ffffff !important;
+
+    font-size: clamp(40px, 6vw, 72px) !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.1;
+
+    margin: 0 0 20px 0 !important;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.75) !important;
 }
 
 
 /* Hero paragraph */
 
 .hero p {
-    color: #f5c542;
-    font-size: clamp(20px, 3vw, 30px);
-    font-weight: 500;
-    margin-bottom: 35px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    color: #f5c542 !important;
+
+    font-size: clamp(20px, 3vw, 30px) !important;
+
+    font-weight: 600 !important;
+
+    margin: 0 0 35px 0 !important;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.60);
 }
 
 
-/* Book Now button */
+/* Book Now */
 
 .hero .btn-warning {
-    background: #f5c542;
-    border: none;
-    color: #071a2b;
+    background: #f5c542 !important;
 
-    font-size: 18px;
-    font-weight: 700;
+    color: #071a2b !important;
 
-    padding: 14px 32px;
+    border: none !important;
 
-    border-radius: 50px;
+    font-size: 18px !important;
 
-    box-shadow: 0 8px 25px rgba(245, 197, 66, 0.35);
+    font-weight: 700 !important;
 
-    transition: 0.3s;
+    padding: 14px 32px !important;
+
+    border-radius: 50px !important;
+
+    box-shadow:
+        0 8px 25px rgba(245, 197, 66, 0.40);
+
+    transition: all 0.3s ease;
 }
 
 .hero .btn-warning:hover {
-    background: #ffffff;
-    color: #071a2b;
+    background: #ffffff !important;
+
+    color: #071a2b !important;
 
     transform: translateY(-4px) scale(1.03);
 
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.30);
+    box-shadow:
+        0 12px 30px rgba(255, 255, 255, 0.35);
 }
 
 
@@ -142,16 +186,21 @@ body {
 
 section h2 {
     color: #0a2540;
+
     font-weight: 800;
+
     position: relative;
+
     margin-bottom: 25px;
 }
 
 section h2::after {
     content: "";
+
     display: block;
 
     width: 65px;
+
     height: 4px;
 
     background: #f5c542;
@@ -170,9 +219,11 @@ section h2::after {
 
 #about p {
     max-width: 850px;
+
     margin: auto;
 
     font-size: 18px;
+
     line-height: 1.8;
 
     color: #4b5563;
@@ -190,7 +241,9 @@ section h2::after {
 
     overflow: hidden;
 
-    transition: 0.35s;
+    transition: all 0.35s ease;
+
+    border: none !important;
 
     border-top: 5px solid #0f766e !important;
 }
@@ -204,6 +257,7 @@ section h2::after {
 
 #rooms h3 {
     color: #0f766e !important;
+
     font-weight: 700;
 }
 
@@ -213,6 +267,7 @@ section h2::after {
 
 #rooms li {
     padding: 7px 0;
+
     color: #4b5563;
 }
 
@@ -234,18 +289,22 @@ section h2::after {
 
     color: #0a2540;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 
     border: 1px solid #e5e7eb;
+
+    margin-bottom: 15px;
 }
 
 #facility .col-md-3:hover {
     background: #0f766e;
+
     color: #ffffff;
 
     transform: translateY(-5px);
 
-    box-shadow: 0 10px 25px rgba(15, 118, 110, 0.25);
+    box-shadow:
+        0 10px 25px rgba(15, 118, 110, 0.25);
 }
 
 
@@ -255,54 +314,44 @@ section h2::after {
     background: #f4f8fb !important;
 }
 
-.gallery-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    align-items: start;
+#gallery .row {
+    align-items: stretch;
 }
 
-.gallery-item {
-    width: 100%;
 
-    overflow: hidden;
+/* Gallery image */
 
-    border-radius: 15px;
+#gallery img {
+    width: 100% !important;
 
-    background: #ffffff;
+    height: 260px !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    cursor: pointer;
+
+    border-radius: 15px !important;
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.12);
 
-    transition: 0.35s;
+    transition: all 0.35s ease;
 }
 
-.gallery-item:hover {
-    transform: translateY(-6px);
+#gallery img:hover {
+    transform: translateY(-6px) scale(1.02);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.18);
+        0 15px 35px rgba(0, 0, 0, 0.20);
 }
 
-.gallery-item img {
-    width: 100%;
 
-    height: 260px;
+/* Remove broken-image alt text look */
 
-    object-fit: cover;
-
-    display: block;
-
-    cursor: pointer;
-
-    transition: 0.4s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.04);
+#gallery img {
+    min-height: 200px;
 }
 
 
@@ -313,12 +362,15 @@ section h2::after {
 }
 
 #contact h2 {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 #contact p {
-    font-size: 22px;
+    font-size: 20px;
+
     font-weight: 600;
+
+    line-height: 1.8;
 }
 
 #contact .btn {
@@ -328,7 +380,9 @@ section h2::after {
 
     font-weight: 700;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
+
+    margin: 5px;
 }
 
 #contact .btn:hover {
@@ -355,9 +409,20 @@ footer {
 
 #modalImage {
     max-width: 100%;
+
     max-height: 75vh;
 
     object-fit: contain;
+}
+
+
+/* ================= GENERAL ANIMATION ================= */
+
+.card,
+.gallery-item,
+#facility .col-md-3,
+.btn {
+    transition: all 0.3s ease;
 }
 
 
@@ -366,130 +431,76 @@ footer {
 @media (max-width: 992px) {
 
     .hero h1 {
-        font-size: 50px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 576px) {
-
-    .navbar-brand {
-        font-size: 18px;
-    }
-
-    .hero {
-        min-height: 90vh;
-    }
-
-    .hero .overlay {
-        min-height: 90vh;
-    }
-
-    .hero h1 {
-        font-size: 38px;
+        font-size: 50px !important;
     }
 
     .hero p {
-        font-size: 20px;
+        font-size: 23px !important;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    #gallery img {
+        height: 250px !important;
     }
-
-    .gallery-item img {
-        height: auto;
-        object-fit: contain;
-    }
-
 }
 
-
-/* ================= SMOOTH ANIMATION ================= */
-
-.card,
-.gallery-item,
-#facility .col-md-3,
-.btn {
-    transition: all 0.3s ease;
-}
-/* ===== HERO FINAL FIX ===== */
-
-.hero {
-    min-height: 100vh !important;
-    height: 100vh !important;
-
-    background-image:
-        linear-gradient(
-            rgba(5, 20, 35, 0.55),
-            rgba(5, 20, 35, 0.70)
-        ),
-        url("./hostel-exterior.jpg") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.hero .overlay {
-    width: 100% !important;
-    height: 100% !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.hero .container {
-    position: relative !important;
-    z-index: 2 !important;
-}
-
-.hero h1 {
-    color: white !important;
-    font-size: 60px !important;
-    font-weight: 800 !important;
-    margin-bottom: 20px !important;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
-}
-
-.hero p {
-    color: #f5c542 !important;
-    font-size: 26px !important;
-    margin-bottom: 30px !important;
-}
-
-.hero .btn-warning {
-    background: #f5c542 !important;
-    color: #071a2b !important;
-    border: none !important;
-    padding: 14px 30px !important;
-    border-radius: 50px !important;
-    font-weight: bold !important;
-}
 
 @media (max-width: 768px) {
 
+    .hero {
+        min-height: 90vh !important;
+        height: 90vh !important;
+    }
+
+    .hero .overlay {
+        height: 90vh !important;
+    }
+
     .hero h1 {
-        font-size: 38px !important;
+        font-size: 40px !important;
     }
 
     .hero p {
         font-size: 20px !important;
     }
+
+    .navbar-brand {
+        font-size: 19px;
+    }
 }
-.hero p {
-    color: #f5c542 !important;
+
+
+@media (max-width: 576px) {
+
+    .hero {
+        min-height: 90vh !important;
+        height: 90vh !important;
+
+        background-position: center center !important;
+    }
+
+    .hero .overlay {
+        height: 90vh !important;
+    }
+
+    .hero h1 {
+        font-size: 34px !important;
+    }
+
+    .hero p {
+        font-size: 19px !important;
+    }
+
+    .hero .btn-warning {
+        font-size: 16px !important;
+
+        padding: 12px 26px !important;
+    }
+
+    #gallery img {
+        height: 250px !important;
+    }
+
+    #contact p {
+        font-size: 18px;
+    }
 }
