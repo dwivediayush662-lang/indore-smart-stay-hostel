@@ -16,104 +16,6 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-
-    <style>
-
-        /* ================= GALLERY ================= */
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            width: 100%;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
-            transition: 0.3s ease;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-        }
-
-
-        /* ================= IMAGE MODAL ================= */
-
-        .image-modal .modal-content {
-            background: rgba(0, 0, 0, 0.95);
-            border: none;
-            border-radius: 0;
-        }
-
-        .image-modal .modal-body {
-            padding: 15px;
-            text-align: center;
-        }
-
-        #modalImage {
-            max-width: 100%;
-            max-height: 75vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .image-modal-title {
-            color: white;
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-
-        .image-modal-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .image-modal .btn-close {
-            filter: invert(1);
-            opacity: 1;
-        }
-
-
-        /* ================= TABLET ================= */
-
-        @media (max-width: 992px) {
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 576px) {
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-        }
-
-    </style>
-
 </head>
 
 
@@ -130,7 +32,6 @@
             🏠 Indore Smart Stay
         </a>
 
-
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -146,7 +47,7 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#home">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -181,25 +82,25 @@
 
 <!-- ================= HERO ================= -->
 
-<!-- ================= HERO ================= -->
+<section id="home"
+         class="hero"
+         style="
+         min-height:100vh;
+         height:100vh;
+         background-image:
+         linear-gradient(
+         rgba(5,20,35,0.55),
+         rgba(5,20,35,0.70)
+         ),
+         url('https://dwivediayush662-lang.github.io/indore-smart-stay-hostel/hostel-exterior.jpg');
+         background-size:cover;
+         background-position:center;
+         background-repeat:no-repeat;
+         display:flex;
+         align-items:center;
+         justify-content:center;
+         ">
 
-<section class="hero"
-style="
-min-height:100vh;
-height:100vh;
-background-image:
-linear-gradient(
-rgba(5,20,35,0.55),
-rgba(5,20,35,0.70)
-),
-url('https://dwivediayush662-lang.github.io/indore-smart-stay-hostel/hostel-exterior.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-">
 
     <div class="overlay"
          style="
@@ -210,39 +111,22 @@ justify-content:center;
          justify-content:center;
          ">
 
+
         <div class="container text-center">
 
-            <h1 style="
-                color:white;
-                font-size:clamp(40px,6vw,72px);
-                font-weight:800;
-                text-shadow:0 4px 15px rgba(0,0,0,0.8);
-                margin-bottom:20px;
-            ">
+            <h1>
                 Welcome to Indore Smart Stay
             </h1>
 
-            <p style="
-                color:#f5c542;
-                font-size:clamp(20px,3vw,30px);
-                font-weight:600;
-                margin-bottom:35px;
-                text-shadow:0 2px 8px rgba(0,0,0,0.7);
-            ">
+            <p>
                 Safe • Comfortable • Affordable
             </p>
 
             <a href="#contact"
-               class="btn btn-warning btn-lg"
-               style="
-               background:#f5c542;
-               color:#071a2b;
-               border:none;
-               font-weight:700;
-               padding:14px 32px;
-               border-radius:50px;
-               ">
+               class="btn btn-warning btn-lg">
+
                 Book Now
+
             </a>
 
         </div>
@@ -265,9 +149,9 @@ justify-content:center;
 
         <p class="text-center">
 
-            Indore Smart Stay Boys & Girls Hostel offers a peaceful,
-            secure, and affordable living environment for students
-            and working professionals.
+            Indore Smart Stay Boys & Girls Hostel offers
+            a peaceful, secure, and affordable living
+            environment for students and working professionals.
 
         </p>
 
@@ -279,8 +163,7 @@ justify-content:center;
 
 <!-- ================= ROOMS ================= -->
 
-<section id="rooms"
-         class="py-5 bg-light">
+<section id="rooms" class="py-5 bg-light">
 
     <div class="container">
 
@@ -383,8 +266,7 @@ justify-content:center;
 
 <!-- ================= FACILITIES ================= -->
 
-<section id="facility"
-         class="py-5">
+<section id="facility" class="py-5">
 
     <div class="container">
 
@@ -436,11 +318,14 @@ justify-content:center;
 <section id="gallery"
          class="py-5 bg-light">
 
+
     <div class="container">
+
 
         <h2 class="text-center mb-2">
             Hostel Gallery
         </h2>
+
 
         <p class="text-center text-muted mb-5">
 
@@ -451,177 +336,99 @@ justify-content:center;
 
 
         <div class="gallery-grid">
-        <!-- Gallery Image 1 -->
-<div class="gallery-item">
-    <img src="hostel-exterior.jpg"
-         alt="Hostel Exterior"
-         onclick="openImage(this.src, this.alt)">
-</div>
 
-<!-- Gallery Image 2 -->
-<div class="gallery-item">
-    <img src="room.jpeg.jpeg"
-         alt="Room Interior"
-         onclick="openImage(this.src, this.alt)">
-</div>
 
-<!-- Gallery Image 3 -->
-<div class="gallery-item">
-    <img src="bathroom.jpeg"
-         alt="Bathroom"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-<!-- Gallery Image 4 -->
-<div class="gallery-item">
-    <img src="reception.jpeg"
-         alt="Hostel Reception"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-<!-- Gallery Image 5 -->
-<div class="gallery-item">
-    <img src="hostel-corridor.jpg"
-         alt="Hostel Corridor"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-<!-- Gallery Image 6 -->
-<div class="gallery-item">
-    <img src="rooftop-view.jpg"
-         alt="Rooftop View"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-<!-- Gallery Image 7 -->
-<div class="gallery-item">
-    <img src="rooftop-area.jpg"
-         alt="Rooftop Area"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-<!-- Gallery Image 8 -->
-<div class="gallery-item">
-    <img src="balcony-view.jpg"
-         alt="Balcony View"
-         onclick="openImage(this.src, this.alt)">
-</div>
-
-</div>
-        </div>
-</section>
-
-            <!-- 1. Hostel Exterior -->
+            <!-- IMAGE 1 -->
 
             <div class="gallery-item">
 
                 <img src="hostel-exterior.jpg"
                      alt="Hostel Exterior"
-                     class="gallery-image"
-                     data-title="Hostel Exterior">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 2. Room Interior -->
+            <!-- IMAGE 2 -->
 
             <div class="gallery-item">
 
                 <img src="room.jpeg.jpeg"
-     alt="Room Interior"
-     class="gallery-image"
-     data-title="Room Interior">
-                     
-                     
-                
+                     alt="Room Interior"
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 3. Room and Bed -->
-
-            <div class="gallery-item">
-
-
-            </div>
-
-
-
-            <!-- 4. Bathroom -->
+            <!-- IMAGE 3 -->
 
             <div class="gallery-item">
 
                 <img src="bathroom.jpeg"
                      alt="Bathroom"
-                     class="gallery-image"
-                     data-title="Bathroom">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 5. Reception -->
+            <!-- IMAGE 4 -->
 
             <div class="gallery-item">
 
                 <img src="reception.jpeg"
                      alt="Hostel Reception"
-                     class="gallery-image"
-                     data-title="Hostel Reception">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 6. Hostel Corridor -->
+            <!-- IMAGE 5 -->
 
             <div class="gallery-item">
 
                 <img src="hostel-corridor.jpg"
                      alt="Hostel Corridor"
-                     class="gallery-image"
-                     data-title="Hostel Corridor">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 7. Rooftop View -->
+            <!-- IMAGE 6 -->
 
             <div class="gallery-item">
 
                 <img src="rooftop-view.jpg"
                      alt="Rooftop View"
-                     class="gallery-image"
-                     data-title="Rooftop View">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 8. Rooftop Area -->
+            <!-- IMAGE 7 -->
 
             <div class="gallery-item">
 
                 <img src="rooftop-area.jpg"
                      alt="Rooftop Area"
-                     class="gallery-image"
-                     data-title="Rooftop Area">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
 
 
-            <!-- 9. Balcony View -->
+            <!-- IMAGE 8 -->
 
             <div class="gallery-item">
 
                 <img src="balcony-view.jpg"
                      alt="Balcony View"
-                     class="gallery-image"
-                     data-title="Balcony View">
+                     onclick="openImage(this.src, this.alt)">
 
             </div>
 
@@ -634,74 +441,76 @@ justify-content:center;
 
 
 
-<!-- ================= IMAGE VIEWER MODAL ================= -->
+<!-- ================= IMAGE VIEWER ================= -->
 
-<div class="modal fade image-modal"
-     id="imageModal"
-     tabindex="-1"
-     aria-hidden="true">
-
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-
-        <div class="modal-content">
-
-            <div class="modal-header border-0">
-
-                <h5 class="modal-title text-white">
-                    Image Preview
-                </h5>
-
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                </button>
-
-            </div>
+<div id="imageViewer"
+     class="image-viewer">
 
 
-            <div class="modal-body">
+    <!-- CLOSE -->
 
-                <img id="modalImage"
-                     src=""
-                     alt="Full Image">
+    <button class="viewer-close"
+            onclick="closeImage()">
 
+        &times;
 
-                <div class="image-modal-title"
-                     id="modalTitle">
-                </div>
+    </button>
 
 
-                <div class="image-modal-buttons">
 
-                    <a id="downloadImage"
-                       href=""
-                       download
-                       class="btn btn-success">
+    <!-- PREVIOUS -->
 
-                        <i class="fa-solid fa-download"></i>
+    <button class="viewer-prev"
+            onclick="previousImage()">
 
-                        Download Image
+        &#10094;
 
-                    </a>
+    </button>
 
 
-                    <button type="button"
-                            class="btn btn-light"
-                            data-bs-dismiss="modal">
 
-                        <i class="fa-solid fa-xmark"></i>
+    <!-- IMAGE -->
 
-                        Close
+    <div class="viewer-content">
 
-                    </button>
+        <img id="viewerImage"
+             src=""
+             alt="">
 
-                </div>
 
-            </div>
+        <div class="viewer-bottom">
+
+
+            <span id="viewerTitle">
+                Hostel Image
+            </span>
+
+
+            <a id="downloadImage"
+               class="download-btn"
+               href="#"
+               download>
+
+                ⬇ Download Image
+
+            </a>
+
 
         </div>
 
     </div>
+
+
+
+    <!-- NEXT -->
+
+    <button class="viewer-next"
+            onclick="nextImage()">
+
+        &#10095;
+
+    </button>
+
 
 </div>
 
@@ -712,7 +521,9 @@ justify-content:center;
 <section id="contact"
          class="bg-dark text-white py-5">
 
+
     <div class="container">
+
 
         <h2 class="text-center mb-4">
             Contact Us
@@ -729,24 +540,23 @@ justify-content:center;
         <div class="text-center">
 
 
+            <!-- CALL -->
+
             <a href="tel:9752355950"
-               class="btn btn-success me-2">
+               class="btn btn-success">
 
-                <i class="fa-solid fa-phone"></i>
-
-                Call Now
+                📞 Call Now
 
             </a>
 
 
 
+            <!-- WHATSAPP -->
+
             <a href="https://wa.me/919752355950"
-               class="btn btn-warning"
-               target="_blank">
+               class="btn btn-warning">
 
-                <i class="fa-brands fa-whatsapp"></i>
-
-                WhatsApp
+                💬 WhatsApp
 
             </a>
 
@@ -769,72 +579,175 @@ justify-content:center;
 
 
 
-<!-- ================= BOOTSTRAP JS ================= -->
+<!-- ================= BOOTSTRAP ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
 
-<!-- ================= GALLERY JAVASCRIPT ================= -->
+<!-- ================= CUSTOM JAVASCRIPT ================= -->
 
 <script>
 
-    const galleryImages =
-        document.querySelectorAll(".gallery-image");
+const galleryImages =
+    document.querySelectorAll("#gallery img");
 
-    const modalImage =
-        document.getElementById("modalImage");
+let currentImageIndex = 0;
 
-    const modalTitle =
-        document.getElementById("modalTitle");
+
+
+/* ================= OPEN IMAGE ================= */
+
+function openImage(src, title) {
+
+    currentImageIndex =
+        Array.from(galleryImages)
+        .findIndex(image => image.src === src);
+
+
+    if (currentImageIndex < 0) {
+        currentImageIndex = 0;
+    }
+
+
+    showImage(currentImageIndex);
+
+
+    document
+        .getElementById("imageViewer")
+        .classList.add("active");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* ================= SHOW IMAGE ================= */
+
+function showImage(index) {
+
+    if (galleryImages.length === 0) {
+        return;
+    }
+
+
+    if (index < 0) {
+        index = galleryImages.length - 1;
+    }
+
+
+    if (index >= galleryImages.length) {
+        index = 0;
+    }
+
+
+    currentImageIndex = index;
+
+
+    const image =
+        galleryImages[currentImageIndex];
+
+
+    const viewerImage =
+        document.getElementById("viewerImage");
+
+
+    const viewerTitle =
+        document.getElementById("viewerTitle");
+
 
     const downloadImage =
         document.getElementById("downloadImage");
 
-    const imageModalElement =
-        document.getElementById("imageModal");
 
-    const imageModal =
-        new bootstrap.Modal(imageModalElement);
+    viewerImage.src = image.src;
 
-
-    galleryImages.forEach(function(image) {
-
-        image.addEventListener("click", function() {
-
-            const imageSource =
-                this.getAttribute("src");
-
-            const imageTitle =
-                this.getAttribute("data-title");
+    viewerImage.alt = image.alt;
 
 
-            modalImage.src = imageSource;
-
-            modalImage.alt = imageTitle;
-
-            modalTitle.textContent = imageTitle;
-
-            downloadImage.href = imageSource;
-
-            downloadImage.setAttribute(
-                "download",
-                imageSource.split("/").pop()
-            );
+    viewerTitle.textContent =
+        image.alt || "Hostel Image";
 
 
-            imageModal.show();
+    downloadImage.href =
+        image.src;
 
-        });
 
-    });
+    downloadImage.download =
+        image.src.split("/").pop();
+
+}
+
+
+
+/* ================= NEXT IMAGE ================= */
+
+function nextImage() {
+
+    showImage(currentImageIndex + 1);
+
+}
+
+
+
+/* ================= PREVIOUS IMAGE ================= */
+
+function previousImage() {
+
+    showImage(currentImageIndex - 1);
+
+}
+
+
+
+/* ================= CLOSE IMAGE ================= */
+
+function closeImage() {
+
+    document
+        .getElementById("imageViewer")
+        .classList.remove("active");
+
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener("keydown", function(event) {
+
+    const viewer =
+        document.getElementById("imageViewer");
+
+
+    if (!viewer.classList.contains("active")) {
+        return;
+    }
+
+
+    if (event.key === "Escape") {
+        closeImage();
+    }
+
+
+    if (event.key === "ArrowRight") {
+        nextImage();
+    }
+
+
+    if (event.key === "ArrowLeft") {
+        previousImage();
+    }
+
+});
 
 </script>
-
-
-
-<script src="script.js"></script>
 
 
 </body>
