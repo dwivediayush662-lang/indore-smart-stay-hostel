@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indore Smart Stay Boys & Girls Hostel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <style>
+
+        /* ================= GALLERY ================= */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            width: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* ================= IMAGE MODAL ================= */
+
+        .image-modal .modal-content {
+            background: rgba(0, 0, 0, 0.95);
+            border: none;
+            border-radius: 0;
+        }
+
+        .image-modal .modal-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #modalImage {
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-modal-title {
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .image-modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .image-modal .btn-close {
+            filter: invert(1);
+            opacity: 1;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 992px) {
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 576px) {
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            🏠 Indore Smart Stay
+        </a>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#rooms">Rooms</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#facility">Facilities</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="overlay">
+
+        <div class="container text-center">
+
+            <h1>Welcome to Indore Smart Stay</h1>
+
+            <p>Safe • Comfortable • Affordable</p>
+
+            <a href="#contact"
+               class="btn btn-warning btn-lg">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+            About Hostel
+        </h2>
+
+        <p class="text-center">
+
+            Indore Smart Stay Boys & Girls Hostel offers a peaceful,
+            secure, and affordable living environment for students
+            and working professionals.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ROOMS ================= -->
+
+<section id="rooms"
+         class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+            Our Rooms
+        </h2>
+
+
+        <div class="row g-4">
+
+
+            <!-- Balcony Room -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow-lg border-0 h-100">
+
+                    <div class="card-body">
+
+                        <h3 class="text-primary">
+                            Balcony Room
+                        </h3>
+
+                        <h5>
+                            Total Rooms:
+                            <span class="text-success">
+                                6
+                            </span>
+                        </h5>
+
+                        <hr>
+
+                        <ul class="list-unstyled">
+
+                            <li>✔ Comfortable Bed</li>
+                            <li>✔ Ceiling Fan</li>
+                            <li>✔ Study Table</li>
+                            <li>✔ Personal Almirah</li>
+                            <li>✔ High-Speed Wi-Fi</li>
+                            <li>✔ RO Drinking Water</li>
+                            <li>✔ Separate Electricity Meter</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Normal Room -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow-lg border-0 h-100">
+
+                    <div class="card-body">
+
+                        <h3 class="text-primary">
+                            Normal Room
+                        </h3>
+
+                        <h5>
+                            Total Rooms:
+                            <span class="text-success">
+                                19
+                            </span>
+                        </h5>
+
+                        <hr>
+
+                        <ul class="list-unstyled">
+
+                            <li>✔ Comfortable Bed</li>
+                            <li>✔ Ceiling Fan</li>
+                            <li>✔ Study Table</li>
+                            <li>✔ Personal Almirah</li>
+                            <li>✔ High-Speed Wi-Fi</li>
+                            <li>✔ RO Drinking Water</li>
+                            <li>✔ Separate Electricity Meter</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FACILITIES ================= -->
+
+<section id="facility"
+         class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center">
+            Facilities
+        </h2>
+
+
+        <div class="row mt-4 g-3">
+
+            <div class="col-md-3">
+                📶 WiFi
+            </div>
+
+            <div class="col-md-3">
+                📚 Study Table
+            </div>
+
+            <div class="col-md-3">
+                💧 RO Water
+            </div>
+
+            <div class="col-md-3">
+                🪑 Almirah
+            </div>
+
+            <div class="col-md-3">
+                ⚡ Separate Meter
+            </div>
+
+            <div class="col-md-3">
+                🧹 Daily Cleaning
+            </div>
+
+            <div class="col-md-3">
+                🎥 CCTV
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery"
+         class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center mb-2">
+            Hostel Gallery
+        </h2>
+
+        <p class="text-center text-muted mb-5">
+
+            Click on any image to view it in full size
+            and download it.
+
+        </p>
+
+
+        <div class="gallery-grid">
+
+
+            <!-- 1. Hostel Exterior -->
+
+            <div class="gallery-item">
+
+                <img src="hostel-exterior.jpg"
+                     alt="Hostel Exterior"
+                     class="gallery-image"
+                     data-title="Hostel Exterior">
+
+            </div>
+
+
+
+            <!-- 2. Room Interior -->
+
+            <div class="gallery-item">
+
+                <img src="room-1.jpeg"
+                     alt="Room Interior"
+                     class="gallery-image"
+                     data-title="Room Interior">
+
+            </div>
+
+
+
+            <!-- 3. Room and Bed -->
+
+            <div class="gallery-item">
+
+                <img src="room-2.jpeg"
+                     alt="Room and Bed"
+                     class="gallery-image"
+                     data-title="Room and Bed">
+
+            </div>
+
+
+
+            <!-- 4. Bathroom -->
+
+            <div class="gallery-item">
+
+                <img src="bathroom.jpeg"
+                     alt="Bathroom"
+                     class="gallery-image"
+                     data-title="Bathroom">
+
+            </div>
+
+
+
+            <!-- 5. Reception -->
+
+            <div class="gallery-item">
+
+                <img src="reception.jpeg"
+                     alt="Hostel Reception"
+                     class="gallery-image"
+                     data-title="Hostel Reception">
+
+            </div>
+
+
+
+            <!-- 6. Hostel Corridor -->
+
+            <div class="gallery-item">
+
+                <img src="hostel-corridor.jpg"
+                     alt="Hostel Corridor"
+                     class="gallery-image"
+                     data-title="Hostel Corridor">
+
+            </div>
+
+
+
+            <!-- 7. Rooftop View -->
+
+            <div class="gallery-item">
+
+                <img src="rooftop-view.jpg"
+                     alt="Rooftop View"
+                     class="gallery-image"
+                     data-title="Rooftop View">
+
+            </div>
+
+
+
+            <!-- 8. Rooftop Area -->
+
+            <div class="gallery-item">
+
+                <img src="rooftop-area.jpg"
+                     alt="Rooftop Area"
+                     class="gallery-image"
+                     data-title="Rooftop Area">
+
+            </div>
+
+
+
+            <!-- 9. Balcony View -->
+
+            <div class="gallery-item">
+
+                <img src="balcony-view.jpg"
+                     alt="Balcony View"
+                     class="gallery-image"
+                     data-title="Balcony View">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= IMAGE VIEWER MODAL ================= -->
+
+<div class="modal fade image-modal"
+     id="imageModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+
+                <h5 class="modal-title text-white">
+                    Image Preview
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <img id="modalImage"
+                     src=""
+                     alt="Full Image">
+
+
+                <div class="image-modal-title"
+                     id="modalTitle">
+                </div>
+
+
+                <div class="image-modal-buttons">
+
+                    <a id="downloadImage"
+                       href=""
+                       download
+                       class="btn btn-success">
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Download Image
+
+                    </a>
+
+
+                    <button type="button"
+                            class="btn btn-light"
+                            data-bs-dismiss="modal">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Close
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact"
+         class="bg-dark text-white py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+            Contact Us
+        </h2>
+
+
+        <p class="text-center">
+
+            📞 9752355950
+
+        </p>
+
+
+        <div class="text-center">
+
+
+            <a href="tel:9752355950"
+               class="btn btn-success me-2">
+
+                <i class="fa-solid fa-phone"></i>
+
+                Call Now
+
+            </a>
+
+
+
+            <a href="https://wa.me/919752355950"
+               class="btn btn-warning"
+               target="_blank">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-black text-white text-center p-3">
+
+    © 2026 Indore Smart Stay Boys & Girls Hostel
+
+</footer>
+
+
+
+<!-- ================= BOOTSTRAP JS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- ================= GALLERY JAVASCRIPT ================= -->
+
+<script>
+
+    const galleryImages =
+        document.querySelectorAll(".gallery-image");
+
+    const modalImage =
+        document.getElementById("modalImage");
+
+    const modalTitle =
+        document.getElementById("modalTitle");
+
+    const downloadImage =
+        document.getElementById("downloadImage");
+
+    const imageModalElement =
+        document.getElementById("imageModal");
+
+    const imageModal =
+        new bootstrap.Modal(imageModalElement);
+
+
+    galleryImages.forEach(function(image) {
+
+        image.addEventListener("click", function() {
+
+            const imageSource =
+                this.getAttribute("src");
+
+            const imageTitle =
+                this.getAttribute("data-title");
+
+
+            modalImage.src = imageSource;
+
+            modalImage.alt = imageTitle;
+
+            modalTitle.textContent = imageTitle;
+
+            downloadImage.href = imageSource;
+
+            downloadImage.setAttribute(
+                "download",
+                imageSource.split("/").pop()
+            );
+
+
+            imageModal.show();
+
+        });
+
+    });
+
+</script>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
