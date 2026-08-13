@@ -418,3 +418,27 @@ footer {
 .btn {
     transition: all 0.3s ease;
 }
+/* TEST - NEW DESIGN */
+body {
+    background: #f4f8fb !important;
+}
+
+.navbar {
+    background: #071a2b !important;
+}
+
+.hero {
+    background-image:
+        linear-gradient(rgba(5,20,35,0.55), rgba(5,20,35,0.65)),
+        url("hostel-exterior.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.hero h1 {
+    color: white !important;
+}
+
+.hero p {
+    color: #f5c542 !important;
+}
