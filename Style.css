@@ -1,3 +1,4 @@
+```css
 /* =====================================================
    INDORE SMART STAY HOSTEL
    PREMIUM WEBSITE STYLING
@@ -52,7 +53,9 @@ body {
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
 
 .hero {
     position: relative !important;
@@ -63,8 +66,8 @@ body {
 
     background-image:
         linear-gradient(
-            rgba(5, 20, 35, 0.55),
-            rgba(5, 20, 35, 0.70)
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.78)
         ),
         url("https://dwivediayush662-lang.github.io/indore-smart-stay-hostel/hostel-exterior.jpg") !important;
 
@@ -100,15 +103,16 @@ body {
 .hero .container {
     position: relative !important;
     z-index: 2 !important;
-
     text-align: center;
 }
 
 
-/* Hero heading */
+/* =====================================================
+   HERO HEADING - CLEAR & READABLE
+   ===================================================== */
 
 .hero h1 {
-    display: block !important;
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
 
@@ -116,14 +120,41 @@ body {
 
     font-size: clamp(40px, 6vw, 72px) !important;
 
-    font-weight: 800 !important;
+    font-weight: 900 !important;
 
-    line-height: 1.1;
+    line-height: 1.15 !important;
 
     margin: 0 0 20px 0 !important;
 
+    padding: 18px 28px !important;
+
+    max-width: 1000px;
+
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.38);
+
     text-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.75) !important;
+        0 3px 6px rgba(0, 0, 0, 1),
+        0 6px 20px rgba(0, 0, 0, 0.95),
+        0 0 35px rgba(0, 0, 0, 0.8);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Hero second line */
+
+.hero h1 span {
+    color: #ffffff !important;
+
+    font-size: 0.72em;
+
+    font-weight: 800;
+
+    display: inline-block;
+
+    margin-top: 8px;
 }
 
 
@@ -134,7 +165,7 @@ body {
     visibility: visible !important;
     opacity: 1 !important;
 
-    color: #f5c542 !important;
+    color: #ffffff !important;
 
     font-size: clamp(20px, 3vw, 30px) !important;
 
@@ -143,7 +174,7 @@ body {
     margin: 0 0 35px 0 !important;
 
     text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.60);
+        0 3px 10px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -308,54 +339,231 @@ section h2::after {
 }
 
 
-/* ================= GALLERY ================= */
+/* =====================================================
+   NEW HORIZONTAL GALLERY
+   ONE IMAGE AT A TIME
+   ===================================================== */
 
 #gallery {
     background: #f4f8fb !important;
 }
 
-#gallery .row {
-    align-items: stretch;
+
+/* Gallery wrapper */
+
+.gallery-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* Horizontal slider */
+
+.gallery-slider {
+    display: flex;
+
+    gap: 20px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #0f766e #e5e7eb;
+
+    padding: 10px 5px 25px;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Mouse dragging */
+
+.gallery-slider:active {
+    cursor: grabbing;
+}
+
+
+/* Chrome / Edge scrollbar */
+
+.gallery-slider::-webkit-scrollbar {
+    height: 7px;
+}
+
+.gallery-slider::-webkit-scrollbar-track {
+    background: #e5e7eb;
+
+    border-radius: 20px;
+}
+
+.gallery-slider::-webkit-scrollbar-thumb {
+    background: #0f766e;
+
+    border-radius: 20px;
+}
+
+
+/* Each slide */
+
+.gallery-slide {
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    scroll-snap-align: center;
+
+    scroll-snap-stop: always;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    position: relative;
 }
 
 
 /* Gallery image */
 
-#gallery img {
+.gallery-slide img {
     width: 100% !important;
 
-    height: 260px !important;
-
-    object-fit: cover !important;
+    height: 480px !important;
 
     display: block !important;
 
+    object-fit: cover !important;
+
     cursor: pointer;
 
-    border-radius: 15px !important;
+    border-radius: 18px !important;
+
+    box-shadow: none !important;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Image hover */
+
+.gallery-slide:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =====================================================
+   GALLERY ARROW BUTTONS
+   ===================================================== */
+
+.gallery-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(7, 26, 43, 0.92);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    z-index: 20;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: all 0.3s ease;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.12);
-
-    transition: all 0.35s ease;
-}
-
-#gallery img:hover {
-    transform: translateY(-6px) scale(1.02);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.20);
+        0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 
-/* Remove broken-image alt text look */
+.gallery-arrow:hover {
+    background: #f5c542;
 
-#gallery img {
-    min-height: 200px;
+    color: #071a2b;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
 }
 
 
-/* ================= CONTACT ================= */
+/* Left button */
+
+.gallery-prev {
+    left: -25px;
+}
+
+
+/* Right button */
+
+.gallery-next {
+    right: -25px;
+}
+
+
+/* Gallery hint */
+
+.gallery-hint {
+    text-align: center;
+
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   CONTACT
+   ===================================================== */
 
 #contact {
     background: #071a2b !important;
@@ -401,110 +609,9 @@ footer {
 }
 
 
-/* ================= IMAGE MODAL ================= */
-
-.image-modal .modal-content {
-    background: rgba(3, 11, 20, 0.97);
-}
-
-#modalImage {
-    max-width: 100%;
-
-    max-height: 75vh;
-
-    object-fit: contain;
-}
-
-
-/* ================= GENERAL ANIMATION ================= */
-
-.card,
-.gallery-item,
-#facility .col-md-3,
-.btn {
-    transition: all 0.3s ease;
-}
-
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 992px) {
-
-    .hero h1 {
-        font-size: 50px !important;
-    }
-
-    .hero p {
-        font-size: 23px !important;
-    }
-
-    #gallery img {
-        height: 250px !important;
-    }
-}
-
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 90vh !important;
-        height: 90vh !important;
-    }
-
-    .hero .overlay {
-        height: 90vh !important;
-    }
-
-    .hero h1 {
-        font-size: 40px !important;
-    }
-
-    .hero p {
-        font-size: 20px !important;
-    }
-
-    .navbar-brand {
-        font-size: 19px;
-    }
-}
-
-
-@media (max-width: 576px) {
-
-    .hero {
-        min-height: 90vh !important;
-        height: 90vh !important;
-
-        background-position: center center !important;
-    }
-
-    .hero .overlay {
-        height: 90vh !important;
-    }
-
-    .hero h1 {
-        font-size: 34px !important;
-    }
-
-    .hero p {
-        font-size: 19px !important;
-    }
-
-    .hero .btn-warning {
-        font-size: 16px !important;
-
-        padding: 12px 26px !important;
-    }
-
-    #gallery img {
-        height: 250px !important;
-    }
-
-    #contact p {
-        font-size: 18px;
-    }
-}
-/* ================= IMAGE VIEWER ================= */
+/* =====================================================
+   IMAGE VIEWER
+   ===================================================== */
 
 .image-viewer {
     display: none;
@@ -531,6 +638,7 @@ footer {
     display: flex;
 }
 
+
 .viewer-content {
     max-width: 90%;
     max-height: 90%;
@@ -538,16 +646,20 @@ footer {
     text-align: center;
 }
 
+
 #viewerImage {
     max-width: 100%;
+
     max-height: 75vh;
 
     object-fit: contain;
 
     border-radius: 10px;
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.6);
 }
+
 
 .viewer-bottom {
     display: flex;
@@ -562,6 +674,7 @@ footer {
     flex-wrap: wrap;
 }
 
+
 #viewerTitle {
     color: white;
 
@@ -569,6 +682,7 @@ footer {
 
     font-weight: 600;
 }
+
 
 .download-btn {
     display: inline-block;
@@ -595,7 +709,9 @@ footer {
 }
 
 
-/* CLOSE BUTTON */
+/* =====================================================
+   VIEWER CLOSE BUTTON
+   ===================================================== */
 
 .viewer-close {
     position: absolute;
@@ -621,7 +737,9 @@ footer {
 }
 
 
-/* PREVIOUS / NEXT */
+/* =====================================================
+   VIEWER PREVIOUS / NEXT
+   ===================================================== */
 
 .viewer-prev,
 .viewer-next {
@@ -667,52 +785,221 @@ footer {
 }
 
 
-/* MOBILE */
+/* =====================================================
+   GENERAL ANIMATION
+   ===================================================== */
 
-@media (max-width: 600px) {
+.card,
+.gallery-slide,
+#facility .col-md-3,
+.btn {
+    transition: all 0.3s ease;
+}
 
-    .image-viewer {
-        padding: 15px;
+
+/* =====================================================
+   RESPONSIVE - TABLET
+   ===================================================== */
+
+@media (max-width: 992px) {
+
+    .hero h1 {
+        font-size: 50px !important;
     }
 
-    #viewerImage {
-        max-height: 65vh;
+    .hero p {
+        font-size: 23px !important;
     }
 
-    .viewer-prev,
-    .viewer-next {
+    .gallery-slide img {
+        height: 400px !important;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 90vh !important;
+
+        height: 90vh !important;
+    }
+
+    .hero .overlay {
+        height: 90vh !important;
+    }
+
+    .hero h1 {
+        font-size: 40px !important;
+
+        padding: 15px 18px !important;
+
+        max-width: 95%;
+    }
+
+    .hero h1 span {
+        font-size: 0.70em;
+    }
+
+    .hero p {
+        font-size: 20px !important;
+    }
+
+    .navbar-brand {
+        font-size: 19px;
+    }
+
+
+    /* Gallery */
+
+    .gallery-wrapper {
+        max-width: 100%;
+    }
+
+    .gallery-slide {
+        flex: 0 0 100%;
+    }
+
+    .gallery-slide img {
+        height: 330px !important;
+    }
+
+    .gallery-arrow {
         width: 42px;
+
         height: 42px;
 
-        font-size: 25px;
+        font-size: 20px;
     }
 
-    .viewer-prev {
+    .gallery-prev {
         left: 8px;
     }
 
-    .viewer-next {
+    .gallery-next {
         right: 8px;
     }
 
-    .viewer-close {
-        top: 5px;
-        right: 12px;
-
-        font-size: 38px;
-    }
-
-    .viewer-bottom {
-        gap: 10px;
-    }
-
-    #viewerTitle {
-        font-size: 15px;
-    }
-
-    .download-btn {
-        padding: 9px 15px;
-
-        font-size: 14px;
-    }
 }
+
+
+/* =====================================================
+   RESPONSIVE - SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 576px) {
+
+    .hero {
+        min-height: 90vh !important;
+
+        height: 90vh !important;
+
+        background-position: center center !important;
+    }
+
+    .hero .overlay {
+        height: 90vh !important;
+    }
+
+    .hero h1 {
+        font-size: 34px !important;
+
+        padding: 14px 15px !important;
+
+        border-radius: 14px;
+
+        max-width: 94%;
+    }
+
+    .hero h1 span {
+        font-size: 0.68em;
+    }
+
+    .hero p {
+        font-size: 19px !important;
+    }
+
+    .hero .btn-warning {
+        font-size: 16px !important;
+
+        padding: 12px 26px !important;
+    }
+
+
+    /* Gallery */
+
+    .gallery-slide img {
+        height: 250px !important;
+
+        border-radius: 14px !important;
+    }
+
+    .gallery-slider {
+        gap: 15px;
+
+        padding-bottom: 18px;
+    }
+
+    .gallery-arrow {
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .gallery-prev {
+        left: 5px;
+    }
+
+    .gallery-next {
+        right: 5px;
+    }
+
+    .gallery-hint {
+        font-size: 13px;
+    }
+
+
+    #contact p {
+        font-size: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 29px !important;
+
+        padding: 12px !important;
+    }
+
+    .hero p {
+        font-size: 17px !important;
+    }
+
+    .gallery-slide img {
+        height: 220px !important;
+    }
+
+    .gallery-arrow {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 16px;
+    }
+
+}
+```
