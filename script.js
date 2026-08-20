@@ -1,4 +1,4 @@
-```javascript id="8b2z4p"
+
 /* =====================================================
    INDORE SMART STAY HOSTEL
    COMPLETE JAVASCRIPT
@@ -469,4 +469,4 @@ if (imageViewer) {
 console.log(
     "Indore Smart Stay Gallery Loaded Successfully!"
 );
-```
+
