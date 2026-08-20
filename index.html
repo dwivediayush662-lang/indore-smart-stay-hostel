@@ -32,6 +32,7 @@
             🏠 Indore Smart Stay
         </a>
 
+
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -89,10 +90,10 @@
          height:100vh;
          background-image:
          linear-gradient(
-         rgba(5,20,35,0.55),
-         rgba(5,20,35,0.70)
+         rgba(0,0,0,0.68),
+         rgba(0,0,0,0.78)
          ),
-         url('https://dwivediayush662-lang.github.io/indore-smart-stay-hostel/hostel-exterior.jpg');
+         url('hostel-exterior.jpg');
          background-size:cover;
          background-position:center;
          background-repeat:no-repeat;
@@ -114,16 +115,52 @@
 
         <div class="container text-center">
 
-            <h1>
-                Welcome to Indore Smart Stay
+            <!-- UPDATED HERO TITLE -->
+
+            <h1 style="
+                color:#ffffff;
+                font-size:clamp(38px,6vw,70px);
+                font-weight:900;
+                line-height:1.15;
+                text-shadow:
+                0 3px 6px rgba(0,0,0,1),
+                0 6px 20px rgba(0,0,0,0.95);
+                background:rgba(0,0,0,0.35);
+                padding:18px 25px;
+                border-radius:15px;
+                display:inline-block;
+                max-width:1000px;
+            ">
+
+                Indore Smart Stay
+
+                <br>
+
+                <span style="
+                    font-size:0.72em;
+                    color:#ffffff;
+                ">
+                    Boys & Girls Hostel
+                </span>
+
             </h1>
 
-            <p>
+
+            <p style="
+                color:#ffffff;
+                font-size:22px;
+                font-weight:600;
+                text-shadow:0 3px 8px rgba(0,0,0,1);
+                margin-top:15px;
+            ">
+
                 Safe • Comfortable • Affordable
+
             </p>
 
+
             <a href="#contact"
-               class="btn btn-warning btn-lg">
+               class="btn btn-warning btn-lg mt-3">
 
                 Book Now
 
@@ -146,6 +183,7 @@
         <h2 class="text-center mb-4">
             About Hostel
         </h2>
+
 
         <p class="text-center">
 
@@ -189,12 +227,15 @@
 
                         <h5>
                             Total Rooms:
+
                             <span class="text-success">
                                 6
                             </span>
+
                         </h5>
 
                         <hr>
+
 
                         <ul class="list-unstyled">
 
@@ -230,12 +271,15 @@
 
                         <h5>
                             Total Rooms:
+
                             <span class="text-success">
                                 19
                             </span>
+
                         </h5>
 
                         <hr>
+
 
                         <ul class="list-unstyled">
 
@@ -313,7 +357,10 @@
 
 
 
-<!-- ================= GALLERY ================= -->
+<!-- =====================================================
+     GALLERY
+     ONE IMAGE AT A TIME + HORIZONTAL SCROLL
+     ===================================================== -->
 
 <section id="gallery"
          class="py-5 bg-light">
@@ -329,111 +376,151 @@
 
         <p class="text-center text-muted mb-5">
 
-            Click on any image to view it in full size
-            and download it.
+            Swipe, drag or use the arrows to explore our hostel.
 
         </p>
 
 
-        <div class="gallery-grid">
+        <div class="gallery-wrapper">
 
 
-            <!-- IMAGE 1 -->
+            <!-- LEFT BUTTON -->
 
-            <div class="gallery-item">
+            <button class="gallery-arrow gallery-prev"
+                    onclick="scrollGallery(-1)"
+                    aria-label="Previous Image">
 
-                <img src="hostel-exterior.jpg"
-                     alt="Hostel Exterior"
-                     onclick="openImage(this.src, this.alt)">
+                &#10094;
+
+            </button>
+
+
+
+            <!-- HORIZONTAL SLIDER -->
+
+            <div class="gallery-slider"
+                 id="gallerySlider">
+
+
+                <!-- IMAGE 1 -->
+
+                <div class="gallery-slide">
+
+                    <img src="hostel-exterior.jpg"
+                         alt="Hostel Exterior"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 2 -->
+
+                <div class="gallery-slide">
+
+                    <img src="room.jpeg.jpeg"
+                         alt="Room Interior"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 3 -->
+
+                <div class="gallery-slide">
+
+                    <img src="bathroom.jpeg"
+                         alt="Bathroom"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 4 -->
+
+                <div class="gallery-slide">
+
+                    <img src="reception.jpeg"
+                         alt="Hostel Reception"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 5 -->
+
+                <div class="gallery-slide">
+
+                    <img src="hostel-corridor.jpg"
+                         alt="Hostel Corridor"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 6 -->
+
+                <div class="gallery-slide">
+
+                    <img src="rooftop-view.jpg"
+                         alt="Rooftop View"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 7 -->
+
+                <div class="gallery-slide">
+
+                    <img src="rooftop-area.jpg"
+                         alt="Rooftop Area"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
+
+
+                <!-- IMAGE 8 -->
+
+                <div class="gallery-slide">
+
+                    <img src="balcony-view.jpg"
+                         alt="Balcony View"
+                         onclick="openImage(this.src, this.alt)">
+
+                </div>
+
 
             </div>
 
 
 
-            <!-- IMAGE 2 -->
+            <!-- RIGHT BUTTON -->
 
-            <div class="gallery-item">
+            <button class="gallery-arrow gallery-next"
+                    onclick="scrollGallery(1)"
+                    aria-label="Next Image">
 
-                <img src="room.jpeg.jpeg"
-                     alt="Room Interior"
-                     onclick="openImage(this.src, this.alt)">
+                &#10095;
 
-            </div>
-
-
-
-            <!-- IMAGE 3 -->
-
-            <div class="gallery-item">
-
-                <img src="bathroom.jpeg"
-                     alt="Bathroom"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
-
-
-
-            <!-- IMAGE 4 -->
-
-            <div class="gallery-item">
-
-                <img src="reception.jpeg"
-                     alt="Hostel Reception"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
-
-
-
-            <!-- IMAGE 5 -->
-
-            <div class="gallery-item">
-
-                <img src="hostel-corridor.jpg"
-                     alt="Hostel Corridor"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
-
-
-
-            <!-- IMAGE 6 -->
-
-            <div class="gallery-item">
-
-                <img src="rooftop-view.jpg"
-                     alt="Rooftop View"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
-
-
-
-            <!-- IMAGE 7 -->
-
-            <div class="gallery-item">
-
-                <img src="rooftop-area.jpg"
-                     alt="Rooftop Area"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
-
-
-
-            <!-- IMAGE 8 -->
-
-            <div class="gallery-item">
-
-                <img src="balcony-view.jpg"
-                     alt="Balcony View"
-                     onclick="openImage(this.src, this.alt)">
-
-            </div>
+            </button>
 
 
         </div>
+
+
+        <p class="gallery-hint">
+
+            ← Swipe / Drag / Scroll →
+
+        </p>
+
 
     </div>
 
@@ -590,6 +677,11 @@
 
 <script>
 
+
+/* =====================================================
+   GALLERY IMAGES
+   ===================================================== */
+
 const galleryImages =
     document.querySelectorAll("#gallery img");
 
@@ -597,9 +689,45 @@ let currentImageIndex = 0;
 
 
 
-/* ================= OPEN IMAGE ================= */
+/* =====================================================
+   HORIZONTAL GALLERY SCROLL
+   ===================================================== */
+
+function scrollGallery(direction) {
+
+    const slider =
+        document.getElementById("gallerySlider");
+
+    const slide =
+        slider.querySelector(".gallery-slide");
+
+    if (!slide) {
+        return;
+    }
+
+
+    const slideWidth =
+        slide.offsetWidth + 20;
+
+
+    slider.scrollBy({
+
+        left: direction * slideWidth,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* =====================================================
+   OPEN IMAGE
+   ===================================================== */
 
 function openImage(src, title) {
+
 
     currentImageIndex =
         Array.from(galleryImages)
@@ -607,7 +735,9 @@ function openImage(src, title) {
 
 
     if (currentImageIndex < 0) {
+
         currentImageIndex = 0;
+
     }
 
 
@@ -625,22 +755,31 @@ function openImage(src, title) {
 
 
 
-/* ================= SHOW IMAGE ================= */
+/* =====================================================
+   SHOW IMAGE
+   ===================================================== */
 
 function showImage(index) {
 
+
     if (galleryImages.length === 0) {
+
         return;
+
     }
 
 
     if (index < 0) {
+
         index = galleryImages.length - 1;
+
     }
 
 
     if (index >= galleryImages.length) {
+
         index = 0;
+
     }
 
 
@@ -663,9 +802,12 @@ function showImage(index) {
         document.getElementById("downloadImage");
 
 
-    viewerImage.src = image.src;
+    viewerImage.src =
+        image.src;
 
-    viewerImage.alt = image.alt;
+
+    viewerImage.alt =
+        image.alt;
 
 
     viewerTitle.textContent =
@@ -683,7 +825,9 @@ function showImage(index) {
 
 
 
-/* ================= NEXT IMAGE ================= */
+/* =====================================================
+   NEXT IMAGE
+   ===================================================== */
 
 function nextImage() {
 
@@ -693,7 +837,9 @@ function nextImage() {
 
 
 
-/* ================= PREVIOUS IMAGE ================= */
+/* =====================================================
+   PREVIOUS IMAGE
+   ===================================================== */
 
 function previousImage() {
 
@@ -703,9 +849,12 @@ function previousImage() {
 
 
 
-/* ================= CLOSE IMAGE ================= */
+/* =====================================================
+   CLOSE IMAGE
+   ===================================================== */
 
 function closeImage() {
+
 
     document
         .getElementById("imageViewer")
@@ -718,34 +867,138 @@ function closeImage() {
 
 
 
-/* ================= KEYBOARD ================= */
+/* =====================================================
+   KEYBOARD CONTROLS
+   ===================================================== */
 
 document.addEventListener("keydown", function(event) {
+
 
     const viewer =
         document.getElementById("imageViewer");
 
 
     if (!viewer.classList.contains("active")) {
+
         return;
+
     }
 
 
     if (event.key === "Escape") {
+
         closeImage();
+
     }
 
 
     if (event.key === "ArrowRight") {
+
         nextImage();
+
     }
 
 
     if (event.key === "ArrowLeft") {
+
         previousImage();
+
     }
 
 });
+
+
+
+/* =====================================================
+   MOUSE WHEEL SUPPORT
+   ===================================================== */
+
+const gallerySlider =
+    document.getElementById("gallerySlider");
+
+
+gallerySlider.addEventListener("wheel", function(event) {
+
+    if (event.deltaY !== 0) {
+
+        event.preventDefault();
+
+        gallerySlider.scrollLeft += event.deltaY;
+
+    }
+
+}, { passive: false });
+
+
+
+/* =====================================================
+   DRAG WITH MOUSE
+   ===================================================== */
+
+let isDragging = false;
+
+let startX;
+
+let scrollLeft;
+
+
+gallerySlider.addEventListener("mousedown", function(event) {
+
+    isDragging = true;
+
+    gallerySlider.style.cursor = "grabbing";
+
+    startX = event.pageX -
+             gallerySlider.offsetLeft;
+
+    scrollLeft =
+        gallerySlider.scrollLeft;
+
+});
+
+
+gallerySlider.addEventListener("mouseleave", function() {
+
+    isDragging = false;
+
+    gallerySlider.style.cursor = "grab";
+
+});
+
+
+gallerySlider.addEventListener("mouseup", function() {
+
+    isDragging = false;
+
+    gallerySlider.style.cursor = "grab";
+
+});
+
+
+gallerySlider.addEventListener("mousemove", function(event) {
+
+    if (!isDragging) {
+        return;
+    }
+
+
+    event.preventDefault();
+
+
+    const x =
+        event.pageX -
+        gallerySlider.offsetLeft;
+
+
+    const walk =
+        (x - startX) * 1.5;
+
+
+    gallerySlider.scrollLeft =
+        scrollLeft - walk;
+
+});
+
 
 </script>
 
