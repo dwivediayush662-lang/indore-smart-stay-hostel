@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +37,10 @@
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#menu">
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -80,7 +84,6 @@
 </nav>
 
 
-
 <!-- ================= HERO ================= -->
 
 <section id="home"
@@ -114,8 +117,6 @@
 
 
         <div class="container text-center">
-
-            <!-- UPDATED HERO TITLE -->
 
             <h1 style="
                 color:#ffffff;
@@ -173,7 +174,6 @@
 </section>
 
 
-
 <!-- ================= ABOUT ================= -->
 
 <section id="about" class="py-5">
@@ -198,7 +198,6 @@
 </section>
 
 
-
 <!-- ================= ROOMS ================= -->
 
 <section id="rooms" class="py-5 bg-light">
@@ -213,7 +212,7 @@
         <div class="row g-4">
 
 
-            <!-- Balcony Room -->
+            <!-- BALCONY ROOM -->
 
             <div class="col-lg-6">
 
@@ -256,8 +255,7 @@
             </div>
 
 
-
-            <!-- Normal Room -->
+            <!-- NORMAL ROOM -->
 
             <div class="col-lg-6">
 
@@ -307,7 +305,6 @@
 </section>
 
 
-
 <!-- ================= FACILITIES ================= -->
 
 <section id="facility" class="py-5">
@@ -319,7 +316,7 @@
         </h2>
 
 
-        <div class="row mt-4 g-3">
+        <div class="row mt-4 g-3 text-center">
 
             <div class="col-md-3">
                 📶 WiFi
@@ -356,18 +353,14 @@
 </section>
 
 
-
 <!-- =====================================================
      GALLERY
-     ONE IMAGE AT A TIME + HORIZONTAL SCROLL
      ===================================================== -->
 
 <section id="gallery"
          class="py-5 bg-light">
 
-
     <div class="container">
-
 
         <h2 class="text-center mb-2">
             Hostel Gallery
@@ -386,14 +379,14 @@
 
             <!-- LEFT BUTTON -->
 
-            <button class="gallery-arrow gallery-prev"
+            <button type="button"
+                    class="gallery-arrow gallery-prev"
                     onclick="scrollGallery(-1)"
                     aria-label="Previous Image">
 
                 &#10094;
 
             </button>
-
 
 
             <!-- HORIZONTAL SLIDER -->
@@ -413,7 +406,6 @@
                 </div>
 
 
-
                 <!-- IMAGE 2 -->
 
                 <div class="gallery-slide">
@@ -423,7 +415,6 @@
                          onclick="openImage(this.src, this.alt)">
 
                 </div>
-
 
 
                 <!-- IMAGE 3 -->
@@ -437,7 +428,6 @@
                 </div>
 
 
-
                 <!-- IMAGE 4 -->
 
                 <div class="gallery-slide">
@@ -447,7 +437,6 @@
                          onclick="openImage(this.src, this.alt)">
 
                 </div>
-
 
 
                 <!-- IMAGE 5 -->
@@ -461,7 +450,6 @@
                 </div>
 
 
-
                 <!-- IMAGE 6 -->
 
                 <div class="gallery-slide">
@@ -473,7 +461,6 @@
                 </div>
 
 
-
                 <!-- IMAGE 7 -->
 
                 <div class="gallery-slide">
@@ -483,7 +470,6 @@
                          onclick="openImage(this.src, this.alt)">
 
                 </div>
-
 
 
                 <!-- IMAGE 8 -->
@@ -500,10 +486,10 @@
             </div>
 
 
-
             <!-- RIGHT BUTTON -->
 
-            <button class="gallery-arrow gallery-next"
+            <button type="button"
+                    class="gallery-arrow gallery-next"
                     onclick="scrollGallery(1)"
                     aria-label="Next Image">
 
@@ -515,7 +501,7 @@
         </div>
 
 
-        <p class="gallery-hint">
+        <p class="gallery-hint text-center">
 
             ← Swipe / Drag / Scroll →
 
@@ -527,7 +513,6 @@
 </section>
 
 
-
 <!-- ================= IMAGE VIEWER ================= -->
 
 <div id="imageViewer"
@@ -536,24 +521,26 @@
 
     <!-- CLOSE -->
 
-    <button class="viewer-close"
-            onclick="closeImage()">
+    <button type="button"
+            class="viewer-close"
+            onclick="closeImage()"
+            aria-label="Close">
 
         &times;
 
     </button>
 
 
-
     <!-- PREVIOUS -->
 
-    <button class="viewer-prev"
-            onclick="previousImage()">
+    <button type="button"
+            class="viewer-prev"
+            onclick="previousImage()"
+            aria-label="Previous Image">
 
         &#10094;
 
     </button>
-
 
 
     <!-- IMAGE -->
@@ -562,11 +549,10 @@
 
         <img id="viewerImage"
              src=""
-             alt="">
+             alt="Hostel Image">
 
 
         <div class="viewer-bottom">
-
 
             <span id="viewerTitle">
                 Hostel Image
@@ -582,17 +568,17 @@
 
             </a>
 
-
         </div>
 
     </div>
 
 
-
     <!-- NEXT -->
 
-    <button class="viewer-next"
-            onclick="nextImage()">
+    <button type="button"
+            class="viewer-next"
+            onclick="nextImage()"
+            aria-label="Next Image">
 
         &#10095;
 
@@ -602,15 +588,12 @@
 </div>
 
 
-
 <!-- ================= CONTACT ================= -->
 
 <section id="contact"
          class="bg-dark text-white py-5">
 
-
     <div class="container">
-
 
         <h2 class="text-center mb-4">
             Contact Us
@@ -618,42 +601,38 @@
 
 
         <p class="text-center">
-
             📞 9752355950
-
         </p>
 
 
         <div class="text-center">
 
-
             <!-- CALL -->
 
             <a href="tel:9752355950"
-               class="btn btn-success">
+               class="btn btn-success me-2">
 
                 📞 Call Now
 
             </a>
 
 
-
             <!-- WHATSAPP -->
 
             <a href="https://wa.me/919752355950"
+               target="_blank"
+               rel="noopener"
                class="btn btn-warning">
 
                 💬 WhatsApp
 
             </a>
 
-
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= FOOTER ================= -->
@@ -665,23 +644,19 @@
 </footer>
 
 
-
 <!-- ================= BOOTSTRAP ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
-<!-- ================= CUSTOM JAVASCRIPT ================= -->
+<!-- =====================================================
+     CUSTOM GALLERY JAVASCRIPT
+     IMPORTANT:
+     This code must be BEFORE </body>
+     ===================================================== -->
 
-<script src="script.js"></script>
-
-
-</body>
-
-</html>
-
-
+<script>
 
 /* =====================================================
    GALLERY IMAGES
@@ -693,7 +668,6 @@ const galleryImages =
 let currentImageIndex = 0;
 
 
-
 /* =====================================================
    HORIZONTAL GALLERY SCROLL
    ===================================================== */
@@ -703,6 +677,10 @@ function scrollGallery(direction) {
     const slider =
         document.getElementById("gallerySlider");
 
+    if (!slider) {
+        return;
+    }
+
     const slide =
         slider.querySelector(".gallery-slide");
 
@@ -710,10 +688,8 @@ function scrollGallery(direction) {
         return;
     }
 
-
     const slideWidth =
         slide.offsetWidth + 20;
-
 
     slider.scrollBy({
 
@@ -726,18 +702,15 @@ function scrollGallery(direction) {
 }
 
 
-
 /* =====================================================
    OPEN IMAGE
    ===================================================== */
 
 function openImage(src, title) {
 
-
     currentImageIndex =
         Array.from(galleryImages)
         .findIndex(image => image.src === src);
-
 
     if (currentImageIndex < 0) {
 
@@ -745,19 +718,20 @@ function openImage(src, title) {
 
     }
 
-
     showImage(currentImageIndex);
 
+    const viewer =
+        document.getElementById("imageViewer");
 
-    document
-        .getElementById("imageViewer")
-        .classList.add("active");
+    if (viewer) {
 
+        viewer.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+
+    }
 
 }
-
 
 
 /* =====================================================
@@ -766,13 +740,11 @@ function openImage(src, title) {
 
 function showImage(index) {
 
-
     if (galleryImages.length === 0) {
 
         return;
 
     }
-
 
     if (index < 0) {
 
@@ -780,13 +752,11 @@ function showImage(index) {
 
     }
 
-
     if (index >= galleryImages.length) {
 
         index = 0;
 
     }
-
 
     currentImageIndex = index;
 
@@ -807,27 +777,36 @@ function showImage(index) {
         document.getElementById("downloadImage");
 
 
-    viewerImage.src =
-        image.src;
+    if (viewerImage) {
+
+        viewerImage.src =
+            image.src;
+
+        viewerImage.alt =
+            image.alt;
+
+    }
 
 
-    viewerImage.alt =
-        image.alt;
+    if (viewerTitle) {
+
+        viewerTitle.textContent =
+            image.alt || "Hostel Image";
+
+    }
 
 
-    viewerTitle.textContent =
-        image.alt || "Hostel Image";
+    if (downloadImage) {
 
+        downloadImage.href =
+            image.src;
 
-    downloadImage.href =
-        image.src;
+        downloadImage.download =
+            image.src.split("/").pop();
 
-
-    downloadImage.download =
-        image.src.split("/").pop();
+    }
 
 }
-
 
 
 /* =====================================================
@@ -841,7 +820,6 @@ function nextImage() {
 }
 
 
-
 /* =====================================================
    PREVIOUS IMAGE
    ===================================================== */
@@ -853,65 +831,67 @@ function previousImage() {
 }
 
 
-
 /* =====================================================
    CLOSE IMAGE
    ===================================================== */
 
 function closeImage() {
 
+    const viewer =
+        document.getElementById("imageViewer");
 
-    document
-        .getElementById("imageViewer")
-        .classList.remove("active");
+    if (viewer) {
 
+        viewer.classList.remove("active");
+
+    }
 
     document.body.style.overflow = "";
 
 }
 
 
-
 /* =====================================================
    KEYBOARD CONTROLS
    ===================================================== */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        const viewer =
+            document.getElementById("imageViewer");
+
+        if (!viewer ||
+            !viewer.classList.contains("active")) {
+
+            return;
+
+        }
 
 
-    const viewer =
-        document.getElementById("imageViewer");
+        if (event.key === "Escape") {
+
+            closeImage();
+
+        }
 
 
-    if (!viewer.classList.contains("active")) {
+        if (event.key === "ArrowRight") {
 
-        return;
+            nextImage();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousImage();
+
+        }
 
     }
-
-
-    if (event.key === "Escape") {
-
-        closeImage();
-
-    }
-
-
-    if (event.key === "ArrowRight") {
-
-        nextImage();
-
-    }
-
-
-    if (event.key === "ArrowLeft") {
-
-        previousImage();
-
-    }
-
-});
-
+);
 
 
 /* =====================================================
@@ -922,88 +902,115 @@ const gallerySlider =
     document.getElementById("gallerySlider");
 
 
-gallerySlider.addEventListener("wheel", function(event) {
-
-    if (event.deltaY !== 0) {
-
-        event.preventDefault();
-
-        gallerySlider.scrollLeft += event.deltaY;
-
-    }
-
-}, { passive: false });
+if (gallerySlider) {
 
 
+    gallerySlider.addEventListener(
+        "wheel",
+        function(event) {
 
-/* =====================================================
-   DRAG WITH MOUSE
-   ===================================================== */
+            if (event.deltaY !== 0) {
 
-let isDragging = false;
+                event.preventDefault();
 
-let startX;
+                gallerySlider.scrollLeft +=
+                    event.deltaY;
 
-let scrollLeft;
+            }
 
-
-gallerySlider.addEventListener("mousedown", function(event) {
-
-    isDragging = true;
-
-    gallerySlider.style.cursor = "grabbing";
-
-    startX = event.pageX -
-             gallerySlider.offsetLeft;
-
-    scrollLeft =
-        gallerySlider.scrollLeft;
-
-});
+        },
+        {
+            passive: false
+        }
+    );
 
 
-gallerySlider.addEventListener("mouseleave", function() {
+    /* =================================================
+       DRAG WITH MOUSE
+       ================================================= */
 
-    isDragging = false;
+    let isDragging = false;
 
-    gallerySlider.style.cursor = "grab";
+    let startX = 0;
 
-});
-
-
-gallerySlider.addEventListener("mouseup", function() {
-
-    isDragging = false;
-
-    gallerySlider.style.cursor = "grab";
-
-});
+    let scrollLeft = 0;
 
 
-gallerySlider.addEventListener("mousemove", function(event) {
+    gallerySlider.addEventListener(
+        "mousedown",
+        function(event) {
 
-    if (!isDragging) {
-        return;
-    }
+            isDragging = true;
+
+            gallerySlider.style.cursor =
+                "grabbing";
+
+            startX =
+                event.pageX -
+                gallerySlider.offsetLeft;
+
+            scrollLeft =
+                gallerySlider.scrollLeft;
+
+        }
+    );
 
 
-    event.preventDefault();
+    gallerySlider.addEventListener(
+        "mouseleave",
+        function() {
+
+            isDragging = false;
+
+            gallerySlider.style.cursor =
+                "grab";
+
+        }
+    );
 
 
-    const x =
-        event.pageX -
-        gallerySlider.offsetLeft;
+    gallerySlider.addEventListener(
+        "mouseup",
+        function() {
+
+            isDragging = false;
+
+            gallerySlider.style.cursor =
+                "grab";
+
+        }
+    );
 
 
-    const walk =
-        (x - startX) * 1.5;
+    gallerySlider.addEventListener(
+        "mousemove",
+        function(event) {
+
+            if (!isDragging) {
+
+                return;
+
+            }
+
+            event.preventDefault();
 
 
-    gallerySlider.scrollLeft =
-        scrollLeft - walk;
+            const x =
+                event.pageX -
+                gallerySlider.offsetLeft;
 
-});
 
+            const walk =
+                (x - startX) * 1.5;
+
+
+            gallerySlider.scrollLeft =
+                scrollLeft - walk;
+
+        }
+    );
+
+}
 
 </script>
 
@@ -1011,3 +1018,4 @@ gallerySlider.addEventListener("mousemove", function(event) {
 </body>
 
 </html>
+```
