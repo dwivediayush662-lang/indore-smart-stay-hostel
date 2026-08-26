@@ -1,20 +1,261 @@
-
+```javascript
 /* =====================================================
    INDORE SMART STAY HOSTEL
-   COMPLETE JAVASCRIPT
+   COMPLETE GALLERY JAVASCRIPT
    ===================================================== */
+
+"use strict";
 
 console.log("Welcome to Indore Smart Stay Hostel");
 
 
 /* =====================================================
-   GALLERY
+   GLOBAL VARIABLES
    ===================================================== */
 
-const galleryImages =
-    document.querySelectorAll("#gallery img");
-
 let currentImageIndex = 0;
+
+let gallerySlider = null;
+
+let galleryImages = [];
+
+
+/* =====================================================
+   INITIALIZE GALLERY
+   ===================================================== */
+
+function initializeGallery() {
+
+    gallerySlider =
+        document.getElementById("gallerySlider");
+
+    galleryImages =
+        Array.from(
+            document.querySelectorAll("#gallery img")
+        );
+
+
+    if (!gallerySlider) {
+
+        console.warn(
+            "Gallery slider not found."
+        );
+
+        return;
+
+    }
+
+
+    if (galleryImages.length === 0) {
+
+        console.warn(
+            "No gallery images found."
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       MOUSE WHEEL
+       ================================================= */
+
+    gallerySlider.addEventListener(
+        "wheel",
+        function(event) {
+
+            /*
+             * Convert vertical mouse wheel
+             * into horizontal scrolling.
+             */
+
+            if (Math.abs(event.deltaY) >
+                Math.abs(event.deltaX)) {
+
+                event.preventDefault();
+
+                gallerySlider.scrollBy({
+
+                    left: event.deltaY,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    /* =================================================
+       MOUSE DRAG
+       ================================================= */
+
+    let isDragging = false;
+
+    let startX = 0;
+
+    let startScrollLeft = 0;
+
+
+    gallerySlider.addEventListener(
+        "mousedown",
+        function(event) {
+
+            isDragging = true;
+
+            startX =
+                event.pageX -
+                gallerySlider.offsetLeft;
+
+            startScrollLeft =
+                gallerySlider.scrollLeft;
+
+            gallerySlider.style.cursor =
+                "grabbing";
+
+            gallerySlider.style.userSelect =
+                "none";
+
+        }
+    );
+
+
+    gallerySlider.addEventListener(
+        "mousemove",
+        function(event) {
+
+            if (!isDragging) {
+
+                return;
+
+            }
+
+            event.preventDefault();
+
+
+            const currentX =
+                event.pageX -
+                gallerySlider.offsetLeft;
+
+
+            const distance =
+                (currentX - startX) * 1.5;
+
+
+            gallerySlider.scrollLeft =
+                startScrollLeft - distance;
+
+        }
+    );
+
+
+    function stopDragging() {
+
+        isDragging = false;
+
+        gallerySlider.style.cursor =
+            "grab";
+
+        gallerySlider.style.userSelect =
+            "";
+
+    }
+
+
+    gallerySlider.addEventListener(
+        "mouseup",
+        stopDragging
+    );
+
+
+    gallerySlider.addEventListener(
+        "mouseleave",
+        stopDragging
+    );
+
+
+    /* =================================================
+       MOBILE TOUCH SWIPE
+       ================================================= */
+
+    let touchStartX = 0;
+
+    let touchStartScrollLeft = 0;
+
+
+    gallerySlider.addEventListener(
+        "touchstart",
+        function(event) {
+
+            if (!event.touches ||
+                event.touches.length === 0) {
+
+                return;
+
+            }
+
+
+            touchStartX =
+                event.touches[0].clientX;
+
+
+            touchStartScrollLeft =
+                gallerySlider.scrollLeft;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    gallerySlider.addEventListener(
+        "touchmove",
+        function(event) {
+
+            if (!event.touches ||
+                event.touches.length === 0) {
+
+                return;
+
+            }
+
+
+            const currentX =
+                event.touches[0].clientX;
+
+
+            const distance =
+                touchStartX - currentX;
+
+
+            /*
+             * Move the gallery while
+             * finger is dragging.
+             */
+
+            gallerySlider.scrollLeft =
+                touchStartScrollLeft +
+                distance;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    console.log(
+        "Gallery initialized successfully."
+    );
+
+}
 
 
 /* =====================================================
@@ -26,25 +267,41 @@ function scrollGallery(direction) {
     const slider =
         document.getElementById("gallerySlider");
 
+
     if (!slider) {
+
         return;
+
     }
+
 
     const slide =
-        slider.querySelector(".gallery-slide");
+        slider.querySelector(
+            ".gallery-slide"
+        );
+
 
     if (!slide) {
+
         return;
+
     }
 
+
+    const gap = 20;
+
+
     const slideWidth =
-        slide.offsetWidth + 20;
+        slide.offsetWidth + gap;
+
 
     slider.scrollBy({
 
-        left: direction * slideWidth,
+        left:
+            direction * slideWidth,
 
-        behavior: "smooth"
+        behavior:
+            "smooth"
 
     });
 
@@ -52,35 +309,79 @@ function scrollGallery(direction) {
 
 
 /* =====================================================
-   OPEN FULL-SCREEN IMAGE
+   OPEN IMAGE VIEWER
    ===================================================== */
 
 function openImage(src, title) {
 
     const images =
-        document.querySelectorAll("#gallery img");
-
-    currentImageIndex =
-        Array.from(images).findIndex(
-            image => image.src === src
+        Array.from(
+            document.querySelectorAll(
+                "#gallery img"
+            )
         );
 
-    if (currentImageIndex < 0) {
-        currentImageIndex = 0;
+
+    if (images.length === 0) {
+
+        return;
+
     }
 
-    showImage(currentImageIndex);
+
+    /*
+     * Find clicked image.
+     */
+
+    currentImageIndex =
+        images.findIndex(
+            function(image) {
+
+                return image.src === src;
+
+            }
+        );
+
+
+    /*
+     * If image wasn't found,
+     * start from first image.
+     */
+
+    if (currentImageIndex < 0) {
+
+        currentImageIndex = 0;
+
+    }
+
+
+    showImage(
+        currentImageIndex
+    );
+
 
     const viewer =
-        document.getElementById("imageViewer");
+        document.getElementById(
+            "imageViewer"
+        );
 
-    if (viewer) {
 
-        viewer.classList.add("active");
+    if (!viewer) {
 
-        document.body.style.overflow = "hidden";
+        console.warn(
+            "Image viewer not found."
+        );
+
+        return;
 
     }
+
+
+    viewer.classList.add("active");
+
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -92,19 +393,35 @@ function openImage(src, title) {
 function showImage(index) {
 
     const images =
-        document.querySelectorAll("#gallery img");
+        Array.from(
+            document.querySelectorAll(
+                "#gallery img"
+            )
+        );
+
 
     if (images.length === 0) {
+
         return;
+
     }
 
+
+    /*
+     * Loop to last image.
+     */
 
     if (index < 0) {
 
-        index = images.length - 1;
+        index =
+            images.length - 1;
 
     }
 
+
+    /*
+     * Loop to first image.
+     */
 
     if (index >= images.length) {
 
@@ -113,7 +430,8 @@ function showImage(index) {
     }
 
 
-    currentImageIndex = index;
+    currentImageIndex =
+        index;
 
 
     const image =
@@ -121,40 +439,78 @@ function showImage(index) {
 
 
     const viewerImage =
-        document.getElementById("viewerImage");
+        document.getElementById(
+            "viewerImage"
+        );
 
 
     const viewerTitle =
-        document.getElementById("viewerTitle");
+        document.getElementById(
+            "viewerTitle"
+        );
 
 
     const downloadImage =
-        document.getElementById("downloadImage");
+        document.getElementById(
+            "downloadImage"
+        );
 
+
+    /* =================================================
+       SET VIEWER IMAGE
+       ================================================= */
 
     if (viewerImage) {
 
-        viewerImage.src = image.src;
+        viewerImage.src =
+            image.src;
 
-        viewerImage.alt = image.alt;
+        viewerImage.alt =
+            image.alt ||
+            "Hostel Image";
 
     }
 
+
+    /* =================================================
+       SET IMAGE TITLE
+       ================================================= */
 
     if (viewerTitle) {
 
         viewerTitle.textContent =
-            image.alt || "Hostel Image";
+            image.alt ||
+            "Hostel Image";
 
     }
 
 
+    /* =================================================
+       SET DOWNLOAD LINK
+       ================================================= */
+
     if (downloadImage) {
 
-        downloadImage.href = image.src;
+        downloadImage.href =
+            image.src;
+
+
+        /*
+         * Extract filename.
+         */
+
+        const imageURL =
+            image.src.split("/");
+
+
+        const fileName =
+            imageURL[
+                imageURL.length - 1
+            ] || "hostel-image.jpg";
+
 
         downloadImage.download =
-            image.src.split("/").pop();
+            fileName;
 
     }
 
@@ -167,7 +523,9 @@ function showImage(index) {
 
 function nextImage() {
 
-    showImage(currentImageIndex + 1);
+    showImage(
+        currentImageIndex + 1
+    );
 
 }
 
@@ -178,7 +536,9 @@ function nextImage() {
 
 function previousImage() {
 
-    showImage(currentImageIndex - 1);
+    showImage(
+        currentImageIndex - 1
+    );
 
 }
 
@@ -190,15 +550,22 @@ function previousImage() {
 function closeImage() {
 
     const viewer =
-        document.getElementById("imageViewer");
+        document.getElementById(
+            "imageViewer"
+        );
+
 
     if (viewer) {
 
-        viewer.classList.remove("active");
+        viewer.classList.remove(
+            "active"
+        );
 
     }
 
-    document.body.style.overflow = "";
+
+    document.body.style.overflow =
+        "";
 
 }
 
@@ -207,254 +574,99 @@ function closeImage() {
    KEYBOARD CONTROLS
    ===================================================== */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    const viewer =
-        document.getElementById("imageViewer");
+        const viewer =
+            document.getElementById(
+                "imageViewer"
+            );
 
-    if (!viewer ||
-        !viewer.classList.contains("active")) {
+
+        /*
+         * Don't do anything if
+         * viewer is not open.
+         */
+
+        if (!viewer ||
+            !viewer.classList.contains(
+                "active"
+            )) {
+
+            return;
+
+        }
+
+
+        /* ESC */
+
+        if (event.key === "Escape") {
+
+            closeImage();
+
+            return;
+
+        }
+
+
+        /* RIGHT ARROW */
+
+        if (event.key === "ArrowRight") {
+
+            nextImage();
+
+            return;
+
+        }
+
+
+        /* LEFT ARROW */
+
+        if (event.key === "ArrowLeft") {
+
+            previousImage();
+
+            return;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE VIEWER BY BACKGROUND CLICK
+   ===================================================== */
+
+function initializeViewer() {
+
+    const imageViewer =
+        document.getElementById(
+            "imageViewer"
+        );
+
+
+    if (!imageViewer) {
 
         return;
 
     }
 
 
-    /* ESC */
-
-    if (event.key === "Escape") {
-
-        closeImage();
-
-    }
-
-
-    /* RIGHT ARROW */
-
-    if (event.key === "ArrowRight") {
-
-        nextImage();
-
-    }
-
-
-    /* LEFT ARROW */
-
-    if (event.key === "ArrowLeft") {
-
-        previousImage();
-
-    }
-
-});
-
-
-/* =====================================================
-   MOUSE WHEEL HORIZONTAL SCROLL
-   ===================================================== */
-
-const gallerySlider =
-    document.getElementById("gallerySlider");
-
-
-if (gallerySlider) {
-
-    gallerySlider.addEventListener(
-        "wheel",
-        function(event) {
-
-            if (event.deltaY !== 0) {
-
-                event.preventDefault();
-
-                gallerySlider.scrollLeft +=
-                    event.deltaY;
-
-            }
-
-        },
-        {
-            passive: false
-        }
-    );
-
-}
-
-
-/* =====================================================
-   MOUSE DRAG / SWIPE
-   ===================================================== */
-
-if (gallerySlider) {
-
-    let isDragging = false;
-
-    let startX = 0;
-
-    let scrollStart = 0;
-
-
-    /* Mouse Down */
-
-    gallerySlider.addEventListener(
-        "mousedown",
-        function(event) {
-
-            isDragging = true;
-
-            gallerySlider.style.cursor =
-                "grabbing";
-
-            startX =
-                event.pageX -
-                gallerySlider.offsetLeft;
-
-            scrollStart =
-                gallerySlider.scrollLeft;
-
-        }
-    );
-
-
-    /* Mouse Up */
-
-    gallerySlider.addEventListener(
-        "mouseup",
-        function() {
-
-            isDragging = false;
-
-            gallerySlider.style.cursor =
-                "grab";
-
-        }
-    );
-
-
-    /* Mouse Leave */
-
-    gallerySlider.addEventListener(
-        "mouseleave",
-        function() {
-
-            isDragging = false;
-
-            gallerySlider.style.cursor =
-                "grab";
-
-        }
-    );
-
-
-    /* Mouse Move */
-
-    gallerySlider.addEventListener(
-        "mousemove",
-        function(event) {
-
-            if (!isDragging) {
-                return;
-            }
-
-            event.preventDefault();
-
-
-            const x =
-                event.pageX -
-                gallerySlider.offsetLeft;
-
-
-            const distance =
-                (x - startX) * 1.5;
-
-
-            gallerySlider.scrollLeft =
-                scrollStart - distance;
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   MOBILE TOUCH SWIPE
-   ===================================================== */
-
-if (gallerySlider) {
-
-    let touchStartX = 0;
-
-    let touchEndX = 0;
-
-
-    gallerySlider.addEventListener(
-        "touchstart",
-        function(event) {
-
-            touchStartX =
-                event.touches[0].clientX;
-
-        },
-        {
-            passive: true
-        }
-    );
-
-
-    gallerySlider.addEventListener(
-        "touchend",
-        function(event) {
-
-            touchEndX =
-                event.changedTouches[0].clientX;
-
-
-            const difference =
-                touchStartX - touchEndX;
-
-
-            /* Swipe Left */
-
-            if (difference > 50) {
-
-                scrollGallery(1);
-
-            }
-
-
-            /* Swipe Right */
-
-            if (difference < -50) {
-
-                scrollGallery(-1);
-
-            }
-
-        },
-        {
-            passive: true
-        }
-    );
-
-}
-
-
-/* =====================================================
-   CLOSE VIEWER WHEN CLICKING BACKGROUND
-   ===================================================== */
-
-const imageViewer =
-    document.getElementById("imageViewer");
-
-
-if (imageViewer) {
-
     imageViewer.addEventListener(
         "click",
         function(event) {
 
-            if (event.target === imageViewer) {
+            /*
+             * Close only when the dark
+             * background itself is clicked.
+             */
+
+            if (
+                event.target ===
+                imageViewer
+            ) {
 
                 closeImage();
 
@@ -466,7 +678,55 @@ if (imageViewer) {
 }
 
 
-console.log(
-    "Indore Smart Stay Gallery Loaded Successfully!"
-);
+/* =====================================================
+   PREVENT IMAGE DRAGGING
+   ===================================================== */
 
+function preventImageDragging() {
+
+    const images =
+        document.querySelectorAll(
+            "#gallery img"
+        );
+
+
+    images.forEach(
+        function(image) {
+
+            image.addEventListener(
+                "dragstart",
+                function(event) {
+
+                    event.preventDefault();
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   INITIALIZE EVERYTHING
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        initializeGallery();
+
+        initializeViewer();
+
+        preventImageDragging();
+
+
+        console.log(
+            "Indore Smart Stay Gallery Loaded Successfully!"
+        );
+
+    }
+);
+```
